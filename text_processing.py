@@ -15,7 +15,7 @@ def normalize(input_string):
     * 모든 단어들은 소문자로 되어야함
     * 띄어쓰기는 한칸으로 되어야함
     * 앞뒤 필요없는 띄어쓰기는 제거해야함
-
+    
          Parameters:
              input_string (string): 영어로 된 대문자, 소문자, 띄어쓰기, 문장부호, 숫자로 이루어진 string
              ex - "This is an example.", "   EXTRA   SPACE   "
@@ -33,7 +33,9 @@ def normalize(input_string):
              >>> tp.normalize(input_string2)
              'extra space'
     """
-    normalized_string = None
+
+    normalized_string = " ".join(input_string.lower().strip().split())
+
     return normalized_string
 
 
@@ -58,5 +60,15 @@ def no_vowels(input_string):
             >>> tp.normalize(input_string2)
             ''W lv Pythn!'
     """
-    no_vowel_string = None
+    input_string = input_string.replace("A","")
+    input_string = input_string.replace("E","")
+    input_string = input_string.replace("I","")
+    input_string = input_string.replace("O","")
+    input_string = input_string.replace("U","")
+    input_string = input_string.replace("a","")
+    input_string = input_string.replace("e","")
+    input_string = input_string.replace("i","")
+    input_string = input_string.replace("o","")
+    no_vowel_string = input_string.replace("u","")
+
     return no_vowel_string
